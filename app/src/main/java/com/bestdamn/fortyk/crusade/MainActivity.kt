@@ -3,16 +3,15 @@ package com.bestdamn.fortyk.crusade
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
-import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.DividerItemDecoration.HORIZONTAL
+import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,9 +26,18 @@ class MainActivity : AppCompatActivity() {
 
         bootstrap()
 
-        viewManager = LinearLayoutManager(this)
-        viewAdapter = ForceAdapter(arrayOf<String>("hello", "blahblah", "testing"))
+        val existingForces = getExistingForces()
+        val forcesTextLines = mutableListOf<String>()
+        existingForces.forEach {
+            forcesTextLines.add(it.name + " - " + it.faction)
+        }
 
+        val adapterForces = forcesTextLines.toTypedArray()
+
+        // TODO: something better than plain text view.
+        // setup recycler view
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = ForceAdapter(adapterForces)
         recyclerView = findViewById<RecyclerView>(R.id.forceRecycler).apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView
@@ -41,20 +49,21 @@ class MainActivity : AppCompatActivity() {
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
 
-
-            // TODO: show Forces in recycler
+            addItemDecoration(DividerItemDecoration(context, VERTICAL))
         }
     }
 
-    fun bootstrap() {
+    // TODO: stop calling this
+    private fun bootstrap() {
         // test units and forces
+        // TODO: actual units
         val unit = Unit(
             name = "testUnit"
         )
 
         val force1 = Force(
-            name = "force1",
-            faction = "test",
+            name = "The BlightBorne",
+            faction = "Death Guard",
             playerName = "test",
             tally = 1,
             battlesWon = 1,
@@ -71,8 +80,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         val force2 = Force(
-            name = "test",
-            faction = "test",
+            name = "Baal's Angels",
+            faction = "Blood Angels",
             playerName = "test",
             tally = 1,
             battlesWon = 1,
@@ -84,13 +93,26 @@ class MainActivity : AppCompatActivity() {
             units = mutableListOf(unit2)
         )
 
+        val unit3 = Unit(
+            name = "testUnit3"
+        )
+
+        val force3 = Force(
+            name = "Soldiers of Silence",
+            faction = "Nercons",
+            units = mutableListOf(unit3)
+        )
+
         // setup prefs, editor, and gson.
         val prefs = getPreferences(MODE_PRIVATE)
         val editor = prefs.edit()
         val gson = Gson()
 
+        // wipe any existing data****
+        editor.clear()
+
         // store the list of forces (force pref names)
-        editor.putStringSet("forceNames", mutableSetOf(force1.name, force2.name))
+        editor.putStringSet("forceNames", mutableSetOf(force1.name, force2.name, force3.name))
 
         // write to shared prefs
         val force1Json = gson.toJson(force1)
@@ -99,6 +121,10 @@ class MainActivity : AppCompatActivity() {
 
         val force2Json = gson.toJson(force2)
         editor.putString(force2.name, force2Json)
+        editor.commit()
+
+        val force3Json = gson.toJson(force3)
+        editor.putString(force3.name, force3Json)
         editor.commit()
 
         val retrievedForcesList = mutableListOf<Force>()
@@ -118,6 +144,22 @@ class MainActivity : AppCompatActivity() {
             Log.d("BOOTSTRAP", force.name)
             Log.d("BOOTSTRAP", force.units[0].name)
         }
+    }
+
+    /**
+     * Read the existing forces stored in shared prefs.
+     */
+    private fun getExistingForces() : List<Force> {
+        val existingForces = mutableListOf<Force>()
+        val prefs = getPreferences(MODE_PRIVATE)
+        val gson = Gson()
+        val nameSet = prefs.getStringSet("forceNames", null)
+        nameSet?.forEach {
+            val storedForceJson = prefs.getString(it, "")
+            val force = gson.fromJson(storedForceJson, Force::class.java)
+            existingForces.add(force)
+        }
+        return existingForces
     }
 
     fun addForce(view: View) {
