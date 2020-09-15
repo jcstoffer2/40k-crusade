@@ -2,8 +2,10 @@
 <androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-    android:textSize="36sp">
+    android:fontFamily="serif-monospace"
+    android:paddingBottom="?attr/dialogPreferredPadding"
+    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+    android:textSize="30sp">
 
 
 </androidx.appcompat.widget.AppCompatTextView>
