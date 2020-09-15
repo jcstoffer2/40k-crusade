@@ -3,8 +3,10 @@ package com.bestdamn.fortyk.crusade
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
@@ -14,14 +16,37 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        bootstrap()
+
+        viewManager = LinearLayoutManager(this)
+        viewAdapter = ForceAdapter(arrayOf<String>("hello", "blahblah", "testing"))
+
+        recyclerView = findViewById<RecyclerView>(R.id.forceRecycler).apply {
+            // use this setting to improve performance if you know that changes
+            // in content do not change the layout size of the RecyclerView
+            setHasFixedSize(true)
+
+            // use a linear layout manager
+            layoutManager = viewManager
+
+            // specify an viewAdapter (see also next example)
+            adapter = viewAdapter
+
+
+            // TODO: show Forces in recycler
+        }
     }
 
-    fun addForce(view: View) {
-
-        // TODO: convert to real add  method.
+    fun bootstrap() {
         // test units and forces
         val unit = Unit(
             name = "testUnit"
@@ -42,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         val unit2 = Unit(
-            name = "testUnit"
+            name = "testUnit2"
         )
 
         val force2 = Force(
@@ -56,7 +81,7 @@ class MainActivity : AppCompatActivity() {
             supplyUsed = 5,
             goalsInfoAndVictories = null,
 
-            units = mutableListOf(unit, unit2)
+            units = mutableListOf(unit2)
         )
 
         // setup prefs, editor, and gson.
@@ -90,8 +115,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         for (force in retrievedForcesList) {
-           Log.d("THEFORCE", force.name)
+            Log.d("BOOTSTRAP", force.name)
+            Log.d("BOOTSTRAP", force.units[0].name)
         }
+    }
 
+    fun addForce(view: View) {
+        // TODO: call force activity
     }
 }

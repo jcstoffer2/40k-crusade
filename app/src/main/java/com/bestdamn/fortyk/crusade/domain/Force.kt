@@ -12,9 +12,9 @@ class Force(
     val supplyUsed: Int? = 0,
     val goalsInfoAndVictories: String? = "",
 
-    val units: MutableList<Unit>
+    val units: MutableList<Unit> // TODO: probably make this nullable
 ) {
-    fun saveForce(force: Force) {
+    fun save(force: Force) {
         // TODO: write to shared prefs
     }
 }
