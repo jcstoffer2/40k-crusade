@@ -1,11 +1,11 @@
 package com.bestdamn.fortyk.crusade
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.DividerItemDecoration.HORIZONTAL
 import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,10 +27,8 @@ class MainActivity : AppCompatActivity() {
         bootstrap()
 
         val existingForces = getExistingForces()
-
         val adapterForces = existingForces.toTypedArray()
 
-        // TODO: something better than plain text view.
         // setup recycler view
         viewManager = LinearLayoutManager(this)
         viewAdapter = ForceAdapter(adapterForces)
@@ -159,6 +157,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addForce(view: View) {
-        // TODO: call force activity
+        val forceIntent = Intent(this, ForceAcitivity::class.java)
+        val gson = Gson()
+        val newForceJson = gson.toJson(Force(name = "Enter Force Name", units = mutableListOf()))
+        forceIntent.putExtra("force", newForceJson)
+
+        startActivity(forceIntent)
     }
 }
