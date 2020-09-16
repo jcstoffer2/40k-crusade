@@ -4,8 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bestdamn.fortyk.crusade.domain.Force
 
-class ForceAdapter (private val myDataset: Array<String>):
+class ForceAdapter (private val myDataset: Array<Force>):
     RecyclerView.Adapter<ForceAdapter.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -30,7 +31,7 @@ class ForceAdapter (private val myDataset: Array<String>):
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView.text = myDataset[position]
+        holder.textView.text = myDataset[position].name
     }
 
     // Return the size of your dataset (invoked by the layout manager)

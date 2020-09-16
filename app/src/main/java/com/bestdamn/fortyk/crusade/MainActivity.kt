@@ -27,12 +27,8 @@ class MainActivity : AppCompatActivity() {
         bootstrap()
 
         val existingForces = getExistingForces()
-        val forcesTextLines = mutableListOf<String>()
-        existingForces.forEach {
-            forcesTextLines.add(it.name + " - " + it.faction)
-        }
 
-        val adapterForces = forcesTextLines.toTypedArray()
+        val adapterForces = existingForces.toTypedArray()
 
         // TODO: something better than plain text view.
         // setup recycler view
