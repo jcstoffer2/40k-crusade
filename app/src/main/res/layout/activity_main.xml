@@ -33,6 +33,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="#CBCBCB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/forceRecycler" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forceRecycler"
         android:layout_width="wrap_content"
@@ -46,5 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

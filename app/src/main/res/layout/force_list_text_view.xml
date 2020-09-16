@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentRight="true"
-    android:fontFamily="serif-monospace"
-    android:paddingBottom="?attr/dialogPreferredPadding"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-    android:textSize="30sp">
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    >
 
+    <TextView
+        android:id="@+id/textViewForceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:textSize="30sp" />
 
-</androidx.appcompat.widget.AppCompatTextView>
+    <TextView
+        android:id="@+id/textViewForceFaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="serif-monospace"
+        android:textSize="18sp" />
+
+</LinearLayout>
