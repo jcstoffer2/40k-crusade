@@ -1,5 +1,7 @@
 package com.bestdamn.fortyk.crusade.domain
 
+import android.preference.PreferenceManager
+
 
 class Force(
     val name: String,
@@ -13,8 +15,4 @@ class Force(
     val goalsInfoAndVictories: String? = "",
 
     val units: MutableList<Unit> // TODO: probably make this nullable
-) {
-    fun save(force: Force) {
-        // TODO: write to shared prefs
-    }
-}
+)
