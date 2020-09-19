@@ -2,7 +2,7 @@ package com.bestdamn.fortyk.crusade.domain
 
 import android.preference.PreferenceManager
 
-
+// TODO: 2 way binding on Int fields. Maybe set textfield inputType?
 class Force (
     var name: String,
     var faction: String? = "",

@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             adapter = viewAdapter
 
             addItemDecoration(DividerItemDecoration(context, VERTICAL))
+            
         }
     }
 
