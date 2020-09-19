@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        />
 
     <TextView
         android:id="@+id/textViewForceFaction"

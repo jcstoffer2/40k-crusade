@@ -3,7 +3,7 @@ package com.bestdamn.fortyk.crusade.domain
 import android.preference.PreferenceManager
 
 
-class Force(
+class Force (
     val name: String,
     val faction: String? = "",
     val playerName: String? = "",

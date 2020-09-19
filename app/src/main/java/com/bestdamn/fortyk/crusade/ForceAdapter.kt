@@ -3,7 +3,6 @@ package com.bestdamn.fortyk.crusade
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import kotlinx.android.synthetic.main.force_list_text_view.view.*

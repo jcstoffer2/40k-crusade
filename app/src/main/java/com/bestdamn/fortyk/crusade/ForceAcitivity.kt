@@ -21,6 +21,7 @@ class ForceAcitivity : AppCompatActivity() {
         Log.d("FORCECHECK", force.name)
 
         // TODO: replace these with 2 way binding: https://developer.android.com/topic/libraries/data-binding/two-way
+        // https://medium.com/androiddevelopers/use-view-binding-to-replace-findviewbyid-c83942471fc
         findViewById<EditText>(R.id.forceName).setText(force.name)
         findViewById<EditText>(R.id.forceFaction).setText(force.faction)
         findViewById<EditText>(R.id.playerName).setText(force.playerName)
