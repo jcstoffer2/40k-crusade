@@ -4,15 +4,15 @@ import android.preference.PreferenceManager
 
 
 class Force (
-    val name: String,
-    val faction: String? = "",
-    val playerName: String? = "",
-    val tally: Int? = 0,
-    val battlesWon: Int? = 0,
-    val requisitionPoints: Int? = 0,
-    val supplyLimit: Int? = 0,
-    val supplyUsed: Int? = 0,
-    val goalsInfoAndVictories: String? = "",
+    var name: String,
+    var faction: String? = "",
+    var playerName: String? = "",
+    var tally: Int? = 0,
+    var battlesWon: Int? = 0,
+    var requisitionPoints: Int? = 0,
+    var supplyLimit: Int? = 0,
+    var supplyUsed: Int? = 0,
+    var goalsInfoAndVictories: String? = "",
 
-    val units: MutableList<Unit> // TODO: probably make this nullable
+    var units: MutableList<Unit> // TODO: probably make this nullable
 )

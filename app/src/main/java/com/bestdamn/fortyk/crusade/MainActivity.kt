@@ -22,9 +22,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // TODO: remove this clearing on app boot.
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
+        prefs.apply()
+
+        bootstrap() // TODO: stop calling this
+
         setContentView(R.layout.activity_main)
 
-        bootstrap()
+    }
+
+    override fun onResume() {
+        super.onResume()
 
         val existingForces = getExistingForces()
         val adapterForces = existingForces.toTypedArray()
@@ -47,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // TODO: stop calling this
     private fun bootstrap() {
         // test units and forces
         // TODO: actual units
@@ -98,7 +107,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // setup prefs, editor, and gson.
-        val prefs = getPreferences(MODE_PRIVATE)
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val editor = prefs.edit()
         val gson = Gson()
 
@@ -143,9 +152,9 @@ class MainActivity : AppCompatActivity() {
     /**
      * Read the existing forces stored in shared prefs.
      */
-    private fun getExistingForces() : List<Force> {
+    private fun getExistingForces(): List<Force> {
         val existingForces = mutableListOf<Force>()
-        val prefs = getPreferences(MODE_PRIVATE)
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val gson = Gson()
         val nameSet = prefs.getStringSet("forceNames", null)
         nameSet?.forEach {
