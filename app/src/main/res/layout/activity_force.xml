@@ -1,4 +1,6 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <!--binding to force-->
     <data>
         <variable
@@ -7,8 +9,6 @@
     </data>
 
     <android.widget.LinearLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -83,40 +83,40 @@
                 android:text="@{force.tally.toString()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Battles Won: " />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/battlesWon"
-                android:text="@{force.battlesWon.toString()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Battles Won: " />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/battlesWon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{force.battlesWon.toString()}" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Requisition Points: " />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/requisitionPoints"
-                android:text="@{force.requisitionPoints.toString()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Requisition Points: " />
+
+                    <EditText
+                        android:id="@+id/requisitionPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{force.requisitionPoints.toString()}" />
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -134,24 +134,24 @@
                 android:text="@{force.supplyLimit.toString()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Supply Used: " />
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/supplyUsed"
-                android:text="@{force.supplyUsed.toString()}"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Supply Used: " />
 
+                <EditText
+                    android:id="@+id/supplyUsed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{force.supplyUsed.toString()}" />
+
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
