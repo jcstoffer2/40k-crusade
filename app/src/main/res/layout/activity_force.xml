@@ -9,6 +9,7 @@
     </data>
 
     <android.widget.LinearLayout
+        style="@style/AppTheme"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -26,10 +27,10 @@
 
             <EditText
                 android:id="@+id/forceName"
-                android:text="@={force.name}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={force.name}" />
         </LinearLayout>
 
         <LinearLayout
@@ -44,10 +45,10 @@
 
             <EditText
                 android:id="@+id/forceFaction"
-                android:text="@={force.faction}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={force.faction}" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,10 +63,10 @@
 
             <EditText
                 android:id="@+id/playerName"
-                android:text="@={force.playerName}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={force.playerName}" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,9 +81,9 @@
 
             <EditText
                 android:id="@+id/tally"
-                android:text="@{force.tally.toString()}"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@{force.tally.toString()}" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,9 +132,9 @@
 
             <EditText
                 android:id="@+id/supplyLimit"
-                android:text="@{force.supplyLimit.toString()}"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@{force.supplyLimit.toString()}" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,12 +167,18 @@
 
             <EditText
                 android:id="@+id/goalsInfoAndVictories"
-                android:text="@={force.goalsInfoAndVictories}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:inputType="text"
+                android:text="@={force.goalsInfoAndVictories}" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddUnit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Unit" />
 
         <Button
             android:id="@+id/btnSave"
