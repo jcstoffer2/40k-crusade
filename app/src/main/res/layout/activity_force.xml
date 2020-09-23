@@ -15,59 +15,41 @@
         android:orientation="vertical"
         tools:context=".ForceAcitivity">
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Name: " />
-
-            <EditText
-                android:id="@+id/forceName"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={force.name}" />
-        </LinearLayout>
+                android:hint="Force Name"
+                android:text="@={force.name}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Faction: " />
-
-            <EditText
-                android:id="@+id/forceFaction"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtFaction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={force.faction}" />
-        </LinearLayout>
+                android:hint="Faction"
+                android:text="@={force.faction}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Player Name: " />
-
-            <EditText
-                android:id="@+id/playerName"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPlayerName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={force.playerName}" />
-        </LinearLayout>
+                android:hint="Player Name"
+                android:text="@={force.playerName}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,24 +137,17 @@
             </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Goals and Victories: " />
-
-            <EditText
-                android:id="@+id/goalsInfoAndVictories"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtGoalsAndVictories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:text="@={force.goalsInfoAndVictories}" />
-
-        </LinearLayout>
+                android:hint="Goals and Victories"
+                android:text="@={force.goalsInfoAndVictories}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btnAddUnit"
