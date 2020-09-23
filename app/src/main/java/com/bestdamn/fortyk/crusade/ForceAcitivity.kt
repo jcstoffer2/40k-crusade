@@ -21,8 +21,13 @@ class ForceAcitivity : AppCompatActivity() {
         val binding: ActivityForceBinding = DataBindingUtil.setContentView(this, R.layout.activity_force)
         binding.force = force
 
+        // listeners
         binding.btnSave.setOnClickListener {
             save(force)
+        }
+
+        binding.btnAddUnit.setOnClickListener {
+            addUnit(force)
         }
     }
 
@@ -44,5 +49,14 @@ class ForceAcitivity : AppCompatActivity() {
         editor.apply()
 
     }
-    
+
+    fun addUnit(force: Force) {
+        val unitIntent = Intent(this, UnitActivity::class.java)
+        val gson = Gson()
+        val forceJson = gson.toJson(force)
+        unitIntent.putExtra("force", forceJson)
+
+        startActivity(unitIntent)
+    }
+
 }
