@@ -528,26 +528,30 @@
                 android:id="@+id/rdBtnBlooded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blooded" />
+                android:text="Blooded"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/rdBtnBattleHardened"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|start"
-                android:text="Hardened" />
+                android:text="Hardened"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/rdBtnHeroic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Heroic" />
+                android:text="Heroic"
+                android:textSize="12sp" />
 
             <RadioButton
                 android:id="@+id/rdBtnLegendary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Legendary" />
+                android:text="Legendary"
+                android:textSize="12sp" />
         </RadioGroup>
 
         <com.google.android.material.textfield.TextInputLayout
