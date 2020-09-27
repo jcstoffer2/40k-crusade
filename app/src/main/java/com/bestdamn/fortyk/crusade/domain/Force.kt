@@ -1,10 +1,11 @@
 package com.bestdamn.fortyk.crusade.domain
 
-import android.preference.PreferenceManager
+import java.util.*
 
 // TODO: 2 way binding on Int fields. Maybe set textfield inputType?
 class Force (
-    var name: String,
+    val id: String = UUID.randomUUID().toString(),
+    var name: String? = "",
     var faction: String? = "",
     var playerName: String? = "",
     var tally: Int? = 0,

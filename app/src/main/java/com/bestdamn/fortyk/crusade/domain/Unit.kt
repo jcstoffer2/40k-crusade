@@ -1,8 +1,11 @@
 package com.bestdamn.fortyk.crusade.domain
 
+import java.util.*
+
 class Unit (
     // card
-    val name: String,
+    val id: String = UUID.randomUUID().toString(),
+    val name: String?,
     val role: String? = "",
     val faction: String? = "",
     val keywords: String? = "",

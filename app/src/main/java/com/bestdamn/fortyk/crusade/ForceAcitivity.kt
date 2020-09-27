@@ -38,13 +38,13 @@ class ForceAcitivity : AppCompatActivity() {
         val forceJson = gson.toJson(force)
 
         val editor = prefs.edit()
-        val nameSet = prefs.getStringSet("forceNames", mutableSetOf())
-        Log.d("NAMESET", nameSet.toString())
+        val forceSet = prefs.getStringSet("forceIds", mutableSetOf())
+        Log.d("NAMESET", forceSet.toString())
         Log.d("FORCEJSON", forceJson.toString())
-        nameSet?.add(force.name)
-        editor.putStringSet("forceNames", nameSet)
+        forceSet?.add(force.id)
+        editor.putStringSet("forceIds", forceSet)
 
-        editor.putString(force.name, forceJson)
+        editor.putString(force.id, forceJson)
 
         editor.apply()
 

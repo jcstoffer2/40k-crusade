@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -116,37 +117,38 @@ class MainActivity : AppCompatActivity() {
         editor.clear()
 
         // store the list of forces (force pref names)
-        editor.putStringSet("forceNames", mutableSetOf(force1.name, force2.name, force3.name))
+        editor.putStringSet("forceIds", mutableSetOf(force1.id, force2.id, force3.id))
 
         // write to shared prefs
         val force1Json = gson.toJson(force1)
-        editor.putString(force1.name, force1Json)
+        editor.putString(force1.id, force1Json)
         editor.commit()
 
         val force2Json = gson.toJson(force2)
-        editor.putString(force2.name, force2Json)
+        editor.putString(force2.id, force2Json)
         editor.commit()
 
         val force3Json = gson.toJson(force3)
-        editor.putString(force3.name, force3Json)
+        editor.putString(force3.id, force3Json)
         editor.commit()
 
         val retrievedForcesList = mutableListOf<Force>()
 
         // read the set of force names
-        val forceNameSet = prefs.getStringSet("forceNames", null)
+        val forceIds = prefs.getStringSet("forceIds", null)
 
         // loop through those names and read the json stored in shared prefs
         // for each
-        forceNameSet?.forEach {
+        forceIds?.forEach {
             val storedForceJson = prefs.getString(it, "")
             val force = gson.fromJson(storedForceJson, Force::class.java)
             retrievedForcesList.add(force)
         }
 
         for (force in retrievedForcesList) {
-            Log.d("BOOTSTRAP", force.name)
-            Log.d("BOOTSTRAP", force.units[0].name)
+            Log.d("BOOTSTRAP-FORCE", force.name.toString())
+            Log.d("BOOTSTRAP-FORCE", force.id)
+            Log.d("BOOTSTRAP-FORCE", force.units[0].name.toString())
         }
     }
 
@@ -157,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         val existingForces = mutableListOf<Force>()
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val gson = Gson()
-        val nameSet = prefs.getStringSet("forceNames", null)
+        val nameSet = prefs.getStringSet("forceIds", null)
         nameSet?.forEach {
             val storedForceJson = prefs.getString(it, "")
             val force = gson.fromJson(storedForceJson, Force::class.java)
@@ -169,7 +171,7 @@ class MainActivity : AppCompatActivity() {
     fun addForce(view: View) {
         val forceIntent = Intent(this, ForceAcitivity::class.java)
         val gson = Gson()
-        val newForceJson = gson.toJson(Force(name = "Enter Force Name", units = mutableListOf()))
+        val newForceJson = gson.toJson(Force( units = mutableListOf()))
         forceIntent.putExtra("force", newForceJson)
 
         startActivity(forceIntent)
