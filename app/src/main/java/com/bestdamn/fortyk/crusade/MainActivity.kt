@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: remove this clearing on app boot.
-        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
-        prefs.apply()
-
-        bootstrap() // TODO: stop calling this
+//        // TODO: remove this clearing on app boot.
+//        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
+//        prefs.apply()
+//
+//        bootstrap() // TODO: stop calling this
 
         setContentView(R.layout.activity_main)
 
