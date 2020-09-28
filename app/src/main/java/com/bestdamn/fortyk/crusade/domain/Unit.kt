@@ -5,6 +5,7 @@ import java.util.*
 class Unit (
     // card
     val id: String = UUID.randomUUID().toString(),
+    val force_id: String,
     var name: String?,
     var role: String? = "",
     var faction: String? = "",

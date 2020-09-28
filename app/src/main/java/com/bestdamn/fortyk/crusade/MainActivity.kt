@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 //        // TODO: remove this clearing on app boot.
-//        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
-//        prefs.apply()
-//
-//        bootstrap() // TODO: stop calling this
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
+        prefs.apply()
+
+        bootstrap() // TODO: stop calling this
 
         setContentView(R.layout.activity_main)
 
@@ -62,9 +62,6 @@ class MainActivity : AppCompatActivity() {
     private fun bootstrap() {
         // test units and forces
         // TODO: actual units
-        val unit = Unit(
-            name = "testUnit"
-        )
 
         val force1 = Force(
             name = "The BlightBorne",
@@ -77,12 +74,15 @@ class MainActivity : AppCompatActivity() {
             supplyUsed = 5,
             goalsInfoAndVictories = null,
 
-            units = mutableListOf(unit)
+            units = mutableListOf()
         )
 
-        val unit2 = Unit(
-            name = "testUnit2"
+        val unit = Unit(
+            name = "testUnit",
+            force_id = force1.id
         )
+        force1.units.add(unit)
+
 
         val force2 = Force(
             name = "Baal's Angels",
@@ -95,18 +95,28 @@ class MainActivity : AppCompatActivity() {
             supplyUsed = 5,
             goalsInfoAndVictories = null,
 
-            units = mutableListOf(unit2)
+            units = mutableListOf()
         )
+        val unit2 = Unit(
+            name = "testUnit2",
+            force_id = force2.id
+        )
+        force2.units.add(unit2)
 
-        val unit3 = Unit(
-            name = "testUnit3"
-        )
+
 
         val force3 = Force(
             name = "Soldiers of Silence",
             faction = "Nercons",
-            units = mutableListOf(unit3)
+            units = mutableListOf()
         )
+
+        val unit3 = Unit(
+            name = "testUnit3",
+            force_id = force3.id
+        )
+
+        force3.units.add(unit3)
 
         // setup prefs, editor, and gson.
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
