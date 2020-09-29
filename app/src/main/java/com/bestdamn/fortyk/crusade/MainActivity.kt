@@ -21,22 +21,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onResume() {
+        super.onResume()
 
-//        // TODO: remove this clearing on app boot.
+        //        // TODO: remove this clearing on app boot.
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
         prefs.apply()
 
         bootstrap() // TODO: stop calling this
 
         setContentView(R.layout.activity_main)
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-
         val existingForces = getExistingForces()
         val adapterForces = existingForces.toTypedArray()
 
@@ -74,7 +68,7 @@ class MainActivity : AppCompatActivity() {
             supplyUsed = 5,
             goalsInfoAndVictories = null,
 
-            units = mutableListOf()
+            units = mutableSetOf()
         )
 
         val unit = Unit(
@@ -95,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             supplyUsed = 5,
             goalsInfoAndVictories = null,
 
-            units = mutableListOf()
+            units = mutableSetOf()
         )
         val unit2 = Unit(
             name = "testUnit2",
@@ -108,7 +102,7 @@ class MainActivity : AppCompatActivity() {
         val force3 = Force(
             name = "Soldiers of Silence",
             faction = "Nercons",
-            units = mutableListOf()
+            units = mutableSetOf()
         )
 
         val unit3 = Unit(
@@ -158,7 +152,7 @@ class MainActivity : AppCompatActivity() {
         for (force in retrievedForcesList) {
             Log.d("BOOTSTRAP-FORCE", force.name.toString())
             Log.d("BOOTSTRAP-FORCE", force.id)
-            Log.d("BOOTSTRAP-FORCE", force.units[0].name.toString())
+            Log.d("BOOTSTRAP-FORCE", force.units.elementAt(0).name.toString())
         }
     }
 
@@ -181,7 +175,7 @@ class MainActivity : AppCompatActivity() {
     fun addForce(view: View) {
         val forceIntent = Intent(this, ForceAcitivity::class.java)
         val gson = Gson()
-        val newForceJson = gson.toJson(Force( units = mutableListOf()))
+        val newForceJson = gson.toJson(Force( units = mutableSetOf()))
         forceIntent.putExtra("force", newForceJson)
 
         startActivity(forceIntent)

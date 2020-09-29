@@ -15,5 +15,5 @@ class Force (
     var supplyUsed: Int? = 0,
     var goalsInfoAndVictories: String? = "",
 
-    var units: MutableList<Unit> // TODO: probably make this nullable
+    var units: MutableSet<Unit>
 )

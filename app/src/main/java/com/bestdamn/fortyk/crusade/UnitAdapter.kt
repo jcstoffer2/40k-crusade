@@ -12,7 +12,6 @@ import android.widget.Toast.LENGTH_LONG
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.force_list_text_view.view.*
 import kotlinx.android.synthetic.main.unit_list_text_view.view.*
 
 class UnitAdapter(private val myDataset: Array<Unit>) :
