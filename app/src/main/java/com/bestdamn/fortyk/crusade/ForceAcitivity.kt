@@ -1,8 +1,6 @@
 package com.bestdamn.fortyk.crusade
 
 import android.content.Intent
-import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -19,12 +17,8 @@ class ForceAcitivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-
+    private val ADD_UNIT = 0
     private lateinit var force: Force
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onResume() {
         super.onResume()
@@ -32,7 +26,9 @@ class ForceAcitivity : AppCompatActivity() {
         val forceJson = intent.getStringExtra("force")
         force = Gson().fromJson(forceJson, Force::class.java)
 
-        val binding: ActivityForceBinding = DataBindingUtil.setContentView(this, R.layout.activity_force)
+
+        val binding: ActivityForceBinding =
+            DataBindingUtil.setContentView(this, R.layout.activity_force)
         binding.force = force
 
         // listeners
@@ -77,6 +73,8 @@ class ForceAcitivity : AppCompatActivity() {
         editor.putString(force.id, forceJson)
 
         editor.apply()
+
+        finish()
 
     }
 

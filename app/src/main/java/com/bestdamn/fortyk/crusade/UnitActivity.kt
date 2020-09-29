@@ -1,8 +1,8 @@
 package com.bestdamn.fortyk.crusade
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.content.Intent
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.bestdamn.fortyk.crusade.databinding.ActivityUnitBinding
 import com.bestdamn.fortyk.crusade.domain.Force
@@ -11,13 +11,14 @@ import com.google.gson.Gson
 
 class UnitActivity : AppCompatActivity() {
 
+    private val UNIT_ADDED = 1
+
     override fun onResume() {
         super.onResume()
         val unitJson = intent.getStringExtra("unit")
         val unit = Gson().fromJson(unitJson, Unit::class.java)
         Log.d("UNITNAME::",  unit.name.toString())
-        val binding: ActivityUnitBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_unit)
+        val binding: ActivityUnitBinding = DataBindingUtil.setContentView(this, R.layout.activity_unit)
         binding.unit = unit
 
         binding.btnSave.setOnClickListener {
@@ -47,5 +48,12 @@ class UnitActivity : AppCompatActivity() {
         val editor = prefs.edit()
         editor.putString(force.id, updatedForceJson)
         editor.commit()
+
+        // send force with new unit back to force activity
+        val forceIntent = Intent(this, ForceAcitivity::class.java)
+        val newForceJson = gson.toJson(force)
+        forceIntent.putExtra("force", newForceJson)
+
+        startActivity(forceIntent)
     }
 }

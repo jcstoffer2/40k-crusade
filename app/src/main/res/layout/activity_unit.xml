@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!--binding to force-->
     <data>
-
         <variable
             name="unit"
             type="com.bestdamn.fortyk.crusade.domain.Unit" />

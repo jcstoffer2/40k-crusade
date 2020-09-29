@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //        // TODO: remove this clearing on app boot.
-        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
-        prefs.apply()
-
-        bootstrap() // TODO: stop calling this
+//        //        // TODO: remove this clearing on app boot.
+//        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
+//        prefs.apply()
+//
+//        bootstrap() // TODO: stop calling this
 
         setContentView(R.layout.activity_main)
         val existingForces = getExistingForces()
@@ -49,8 +49,32 @@ class MainActivity : AppCompatActivity() {
             adapter = viewAdapter
 
             addItemDecoration(DividerItemDecoration(context, VERTICAL))
-            
         }
+    }
+
+    /**
+     * Read the existing forces stored in shared prefs.
+     */
+    private fun getExistingForces(): List<Force> {
+        val existingForces = mutableListOf<Force>()
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+        val gson = Gson()
+        val nameSet = prefs.getStringSet("forceIds", null)
+        nameSet?.forEach {
+            val storedForceJson = prefs.getString(it, "")
+            val force = gson.fromJson(storedForceJson, Force::class.java)
+            existingForces.add(force)
+        }
+        return existingForces
+    }
+
+    fun addForce(view: View) {
+        val forceIntent = Intent(this, ForceAcitivity::class.java)
+        val gson = Gson()
+        val newForceJson = gson.toJson(Force( units = mutableSetOf()))
+        forceIntent.putExtra("force", newForceJson)
+
+        startActivity(forceIntent)
     }
 
     private fun bootstrap() {
@@ -154,30 +178,5 @@ class MainActivity : AppCompatActivity() {
             Log.d("BOOTSTRAP-FORCE", force.id)
             Log.d("BOOTSTRAP-FORCE", force.units.elementAt(0).name.toString())
         }
-    }
-
-    /**
-     * Read the existing forces stored in shared prefs.
-     */
-    private fun getExistingForces(): List<Force> {
-        val existingForces = mutableListOf<Force>()
-        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
-        val gson = Gson()
-        val nameSet = prefs.getStringSet("forceIds", null)
-        nameSet?.forEach {
-            val storedForceJson = prefs.getString(it, "")
-            val force = gson.fromJson(storedForceJson, Force::class.java)
-            existingForces.add(force)
-        }
-        return existingForces
-    }
-
-    fun addForce(view: View) {
-        val forceIntent = Intent(this, ForceAcitivity::class.java)
-        val gson = Gson()
-        val newForceJson = gson.toJson(Force( units = mutableSetOf()))
-        forceIntent.putExtra("force", newForceJson)
-
-        startActivity(forceIntent)
     }
 }
