@@ -1,6 +1,7 @@
 package com.bestdamn.fortyk.crusade
 
 import android.app.AlertDialog
+import android.content.Context.MODE_PRIVATE
 import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
@@ -58,7 +59,24 @@ class ForceAdapter(private val myDataset: Array<Force>) :
                     setTitle("Delete Force?")
                     setMessage("Are you sure you want to delete the Force: " + myDataset[position].name + "?")
                     setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
-                        Toast.makeText(it.context, "TODO: DELETE STUFFS MAN", LENGTH_LONG).show()
+
+                        val sharedPrefs = it.context.getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+                        val editor = sharedPrefs.edit()
+
+                        // remove force id from force ids list
+                        val forceSet = sharedPrefs.getStringSet("forceIds", null)
+                        forceSet?.remove(myDataset[position].id)
+                        editor.putStringSet("forceIds", forceSet)
+
+                        // remove the force itself
+                        editor.remove(myDataset[position].id)
+
+                        editor.apply()
+
+                        // restart the main activity to pull new list
+                        val intent = Intent(context, MainActivity::class.java)
+                        context.startActivity(intent)
+
                     })
                     setNegativeButton("No", null)
 
