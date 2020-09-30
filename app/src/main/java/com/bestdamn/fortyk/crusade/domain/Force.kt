@@ -2,7 +2,6 @@ package com.bestdamn.fortyk.crusade.domain
 
 import java.util.*
 
-// TODO: 2 way binding on Int fields. Maybe set textfield inputType?
 class Force (
     val id: String = UUID.randomUUID().toString(),
     var name: String? = "",

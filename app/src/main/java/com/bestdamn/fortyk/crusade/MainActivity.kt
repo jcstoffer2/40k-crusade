@@ -15,10 +15,10 @@ import com.google.gson.Gson
 import java.util.*
 
 /**
- * TODO: UNIT RADIO BUTTONS (NO BINDING)
  * TODO: DELETE FORCES
  * TODO: DELETE UNITS
  * TODO: ADDITIONAL UI UPDATES
+ * TODO: AD BANNER ON BOTTOM OF SCREENS
  */
 
 class MainActivity : AppCompatActivity() {
@@ -127,8 +127,6 @@ class MainActivity : AppCompatActivity() {
         )
         force2.units.add(unit2)
 
-
-
         val force3 = Force(
             name = "Soldiers of Silence",
             faction = "Nercons",
@@ -156,15 +154,15 @@ class MainActivity : AppCompatActivity() {
         // write to shared prefs
         val force1Json = gson.toJson(force1)
         editor.putString(force1.id, force1Json)
-        editor.commit()
+        editor.apply()
 
         val force2Json = gson.toJson(force2)
         editor.putString(force2.id, force2Json)
-        editor.commit()
+        editor.apply()
 
         val force3Json = gson.toJson(force3)
         editor.putString(force3.id, force3Json)
-        editor.commit()
+        editor.apply()
 
         val retrievedForcesList = mutableListOf<Force>()
 

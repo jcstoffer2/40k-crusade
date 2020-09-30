@@ -1,7 +1,8 @@
 package com.bestdamn.fortyk.crusade
 
 import android.content.Intent
-import android.util.Log
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -12,17 +13,20 @@ import com.google.gson.Gson
 
 class UnitActivity : AppCompatActivity() {
 
-    private val UNIT_ADDED = 1
-
     override fun onResume() {
         super.onResume()
         val unitJson = intent.getStringExtra("unit")
         val unit = Gson().fromJson(unitJson, Unit::class.java)
-        Log.d("UNITNAME::",  unit.name.toString())
         val binding: ActivityUnitBinding = DataBindingUtil.setContentView(this, R.layout.activity_unit)
         binding.unit = unit
 
-
+        // check the currentRank and select the correct checkbox.
+        when(unit.currentRank) {
+            "Blooded" -> findViewById<RadioButton>(R.id.rdBtnBlooded).isChecked = true
+            "Hardened" -> findViewById<RadioButton>(R.id.rdBtnBattleHardened).isChecked = true
+            "Heroic" -> findViewById<RadioButton>(R.id.rdBtnHeroic).isChecked = true
+            "Legendary" -> findViewById<RadioButton>(R.id.rdBtnLegendary).isChecked = true
+        }
 
         binding.btnSave.setOnClickListener {
             saveUnit(unit)
@@ -36,6 +40,11 @@ class UnitActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, "Enter a Unit Name to Save.", Toast.LENGTH_LONG).show()
             return
         }
+
+        // check the radio buttons and set the correct field
+        val radioGroup: RadioGroup = findViewById<RadioGroup>(R.id.rdGrpRank)
+        val checkedRadioButton: RadioButton = findViewById<RadioButton>(radioGroup.checkedRadioButtonId)
+        unit.currentRank = checkedRadioButton.text.toString()
 
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val gson = Gson()
@@ -57,7 +66,7 @@ class UnitActivity : AppCompatActivity() {
         val updatedForceJson = gson.toJson(force)
         val editor = prefs.edit()
         editor.putString(force.id, updatedForceJson)
-        editor.commit()
+        editor.apply()
 
         // send force with new unit back to force activity
         val forceIntent = Intent(this, ForceAcitivity::class.java)

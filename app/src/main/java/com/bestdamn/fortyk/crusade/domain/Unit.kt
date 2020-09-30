@@ -45,6 +45,3 @@ class Unit (
     var battleHonors: String? = "",
     var battleScars: String? = ""
 )
-{
-
-}
