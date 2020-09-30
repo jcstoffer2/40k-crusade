@@ -1,6 +1,8 @@
 package com.bestdamn.fortyk.crusade
 
 import android.content.Intent
+import android.widget.Toast
+import android.widget.Toast.LENGTH_LONG
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -10,6 +12,7 @@ import com.bestdamn.fortyk.crusade.databinding.ActivityForceBinding
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
+import kotlin.time.Duration
 
 class ForceAcitivity : AppCompatActivity() {
 
@@ -17,7 +20,6 @@ class ForceAcitivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    private val ADD_UNIT = 0
     private lateinit var force: Force
 
     override fun onResume() {
@@ -59,17 +61,26 @@ class ForceAcitivity : AppCompatActivity() {
     }
 
     fun save(force: Force) {
+
+        // name required to save
+        if (force.name == null || force.name == "") {
+            Toast.makeText(applicationContext, "Enter a Force Name to Save.", LENGTH_LONG).show()
+            return
+        }
+
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val gson = Gson()
 
         val forceJson = gson.toJson(force)
 
+        // store force id in list of forces
         val editor = prefs.edit()
         val forceSet = prefs.getStringSet("forceIds", mutableSetOf())
         forceSet?.add(force.id)
 
         editor.putStringSet("forceIds", forceSet)
 
+        // store force in shared prefs
         editor.putString(force.id, forceJson)
 
         editor.apply()

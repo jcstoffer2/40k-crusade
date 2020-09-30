@@ -15,7 +15,6 @@ import com.google.gson.Gson
 import java.util.*
 
 /**
- * TODO: ONLY SAVE OBJECTS THAT HAVE NAMES
  * TODO: UNIT RADIO BUTTONS (NO BINDING)
  * TODO: DELETE FORCES
  * TODO: DELETE UNITS
