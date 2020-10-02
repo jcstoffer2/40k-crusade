@@ -21,7 +21,7 @@ class UnitActivity : AppCompatActivity() {
         binding.unit = unit
 
         // check the currentRank and select the correct checkbox.
-        when(unit.currentRank) {
+        when (unit.currentRank) {
             "Blooded" -> findViewById<RadioButton>(R.id.rdBtnBlooded).isChecked = true
             "Hardened" -> findViewById<RadioButton>(R.id.rdBtnBattleHardened).isChecked = true
             "Heroic" -> findViewById<RadioButton>(R.id.rdBtnHeroic).isChecked = true
@@ -50,12 +50,12 @@ class UnitActivity : AppCompatActivity() {
         val gson = Gson()
 
         // get the force
-        val forceJson = prefs.getString(unit.force_id,"")
+        val forceJson = prefs.getString(unit.force_id, "")
         val force: Force = gson.fromJson(forceJson, Force::class.java)
 
         // update unit list TODO: gotta be a better way to do this.
         val foundUnit = force.units.find { it.id == unit.id }
-        if(foundUnit == null) {
+        if (foundUnit == null) {
             force.units.add(unit)
         } else {
             force.units.remove(foundUnit) // remove old

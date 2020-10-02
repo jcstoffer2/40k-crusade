@@ -1,15 +1,15 @@
 package com.bestdamn.fortyk.crusade
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.recyclerview.widget.RecyclerView
+import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.unit_list_text_view.view.*
@@ -58,7 +58,24 @@ class UnitAdapter(private val myDataset: Array<Unit>) :
                     setTitle("Delete Unit?")
                     setMessage("Are you sure you want to delete the Unit: " + myDataset[position].name + "?")
                     setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
-                        Toast.makeText(it.context, "TODO: DELETE STUFFS MAN", LENGTH_LONG).show()
+                        val sharedPrefs = it.context.getSharedPreferences(
+                            "sharedPrefs",
+                            Context.MODE_PRIVATE
+                        )
+                        val editor = sharedPrefs.edit()
+                        val forceJson = sharedPrefs.getString(myDataset[position].force_id, null)
+                        val gson = Gson()
+                        val force = gson.fromJson(forceJson, Force::class.java)
+                        val unitToRemove = force.units.find { unit -> unit.id == myDataset[position].id }
+                        force.units.remove(unitToRemove)
+                        val updatedForceJson = gson.toJson(force)
+                        editor.putString(force.id, updatedForceJson)
+                        editor.apply()
+
+                        // restart the force activity to pull new unit list
+                        val intent = Intent(context, ForceAcitivity::class.java)
+                        intent.putExtra("force", updatedForceJson)
+                        context.startActivity(intent)
                     })
                     setNegativeButton("No", null)
 

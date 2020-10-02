@@ -8,8 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.Toast
-import android.widget.Toast.LENGTH_LONG
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.google.gson.Gson
@@ -60,7 +58,8 @@ class ForceAdapter(private val myDataset: Array<Force>) :
                     setMessage("Are you sure you want to delete the Force: " + myDataset[position].name + "?")
                     setPositiveButton("Yes", DialogInterface.OnClickListener { dialog, which ->
 
-                        val sharedPrefs = it.context.getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+                        val sharedPrefs =
+                            it.context.getSharedPreferences("sharedPrefs", MODE_PRIVATE)
                         val editor = sharedPrefs.edit()
 
                         // remove force id from force ids list
@@ -73,7 +72,7 @@ class ForceAdapter(private val myDataset: Array<Force>) :
 
                         editor.apply()
 
-                        // restart the main activity to pull new list
+                        // restart the main activity to pull new force list
                         val intent = Intent(context, MainActivity::class.java)
                         context.startActivity(intent)
 

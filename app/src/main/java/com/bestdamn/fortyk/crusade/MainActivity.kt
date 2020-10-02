@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
     fun addForce(view: View) {
         val forceIntent = Intent(this, ForceAcitivity::class.java)
         val gson = Gson()
-        val newForceJson = gson.toJson(Force( units = mutableSetOf()))
+        val newForceJson = gson.toJson(Force(units = mutableSetOf()))
         forceIntent.putExtra("force", newForceJson)
 
         startActivity(forceIntent)
