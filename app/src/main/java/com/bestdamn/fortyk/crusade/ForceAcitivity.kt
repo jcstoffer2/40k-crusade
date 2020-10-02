@@ -16,7 +16,6 @@ import kotlin.time.Duration
 
 class ForceAcitivity : AppCompatActivity() {
 
-
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
@@ -27,7 +26,6 @@ class ForceAcitivity : AppCompatActivity() {
 
         val forceJson = intent.getStringExtra("force")
         force = Gson().fromJson(forceJson, Force::class.java)
-
 
         val binding: ActivityForceBinding = DataBindingUtil.setContentView(this, R.layout.activity_force)
         binding.force = force

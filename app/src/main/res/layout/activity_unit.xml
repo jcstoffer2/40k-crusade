@@ -522,32 +522,20 @@
                         android:inputType="number"
                         android:text="@={``+unit.unitsDestroyedMeleeTotal}" />
 
-                    <EditText
-                        android:id="@+id/editTextNumber18"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:gravity="center_horizontal"
-                        android:inputType="number" />
+                        android:layout_weight="1" />
 
-                    <EditText
-                        android:id="@+id/editTextNumber19"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:gravity="center_horizontal"
-                        android:inputType="number" />
+                        android:layout_weight="1" />
 
-                    <EditText
-                        android:id="@+id/editTextNumber20"
+                    <Space
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:gravity="center_horizontal"
-                        android:inputType="number" />
+                        android:layout_weight="1" />
 
                 </LinearLayout>
             </LinearLayout>
