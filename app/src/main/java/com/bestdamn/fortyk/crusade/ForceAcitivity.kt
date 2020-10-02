@@ -29,8 +29,7 @@ class ForceAcitivity : AppCompatActivity() {
         force = Gson().fromJson(forceJson, Force::class.java)
 
 
-        val binding: ActivityForceBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_force)
+        val binding: ActivityForceBinding = DataBindingUtil.setContentView(this, R.layout.activity_force)
         binding.force = force
 
         // listeners
@@ -95,6 +94,11 @@ class ForceAcitivity : AppCompatActivity() {
         val newUnitJson = gson.toJson(Unit(force_id = force.id))
         unitIntent.putExtra("unit", newUnitJson)
         startActivity(unitIntent)
+    }
+
+    override fun onBackPressed() {
+        val mainIntent = Intent(this, MainActivity::class.java)
+        startActivity(mainIntent)
     }
 
 }

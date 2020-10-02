@@ -75,4 +75,5 @@ class UnitActivity : AppCompatActivity() {
 
         startActivity(forceIntent)
     }
+
 }
