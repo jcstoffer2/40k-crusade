@@ -15,10 +15,9 @@ import com.google.gson.Gson
 import java.util.*
 
 /**
- * TODO: DELETE FORCES
- * TODO: DELETE UNITS
- * TODO: ADDITIONAL UI UPDATES
+ * TODO: ADDITIONAL UI UPDATES (Icons)
  * TODO: AD BANNER ON BOTTOM OF SCREENS
+ * TODO: ADDITIONAL UI UPDATES (Themes)
  */
 
 class MainActivity : AppCompatActivity() {
