@@ -82,6 +82,10 @@ class MainActivity : AppCompatActivity() {
         startActivity(forceIntent)
     }
 
+    override fun onBackPressed() {
+        finish()
+    }
+
     private fun bootstrap() {
         // test units and forces
         // TODO: actual units
