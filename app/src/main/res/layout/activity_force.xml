@@ -31,6 +31,12 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="?android:attr/listDivider" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -199,6 +205,12 @@
                 android:text="Force Units"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerUnit"
