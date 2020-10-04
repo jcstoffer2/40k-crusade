@@ -4,6 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
+    android:background="@drawable/rounded_corners"
+    android:layout_marginBottom="5sp"
+    android:layout_marginTop="5sp"
     >
 
     <TextView
@@ -12,6 +15,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:textSize="30sp"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp"
         />
 
     <TextView
@@ -20,6 +25,9 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:fontFamily="serif-monospace"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="5sp"
+        android:layout_marginTop="5sp"
+        />
 
 </LinearLayout>

@@ -4,8 +4,6 @@ import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
@@ -45,7 +43,6 @@ class MainActivity : AppCompatActivity() {
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
 
-            addItemDecoration(DividerItemDecoration(context, VERTICAL))
         }
     }
 

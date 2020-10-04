@@ -5,14 +5,12 @@ import android.widget.Toast
 import android.widget.Toast.LENGTH_LONG
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.databinding.ActivityForceBinding
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
-import kotlin.time.Duration
 
 class ForceAcitivity : AppCompatActivity() {
 
@@ -52,8 +50,6 @@ class ForceAcitivity : AppCompatActivity() {
 
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
-
-            addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
         }
     }
