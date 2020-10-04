@@ -31,6 +31,10 @@ class UnitActivity : AppCompatActivity() {
         binding.btnSave.setOnClickListener {
             saveUnit(unit)
         }
+
+        binding.btnBack.setOnClickListener {
+            this.onBackPressed()
+        }
     }
 
     private fun saveUnit(unit: Unit) {

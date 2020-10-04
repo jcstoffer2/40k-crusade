@@ -84,7 +84,7 @@ class ForceAcitivity : AppCompatActivity() {
 
         editor.apply()
 
-        finish()
+//        finish()
 
     }
 
