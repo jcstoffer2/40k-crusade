@@ -1,70 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="serif-monospace"
-        android:gravity="center_horizontal"
-        android:text="Crusade Forces"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textStyle="bold|italic"
-        tools:layout_editor_absoluteX="47dp"
-        tools:layout_editor_absoluteY="31dp" />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="?android:attr/listDivider" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="16sp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/forceRecycler"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:clipToPadding="true"
-        android:foregroundGravity="center_horizontal"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="69dp" />
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="452dp"
-        android:gravity="right"
-        android:orientation="horizontal">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addForceButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|right|end"
-            android:layout_margin="16sp"
-            android:clickable="true"
-            android:onClick="addForce"
-            app:backgroundTint="@color/design_default_color_error"
-            app:srcCompat="@android:drawable/ic_input_add"
-            tools:layout_editor_absoluteX="345dp"
-            tools:layout_editor_absoluteY="663dp" />
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="serif-monospace"
+            android:gravity="center_horizontal"
+            android:text="Crusade Forces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textStyle="bold|italic" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/forceRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:clipToPadding="true"
+            android:foregroundGravity="center_horizontal"
+            tools:layout_editor_absoluteX="171dp"
+            tools:layout_editor_absoluteY="69dp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/addForceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="16sp"
+                android:onClick="addForce"
+                app:backgroundTint="@color/design_default_color_error"
+                app:srcCompat="@android:drawable/ic_input_add" />
+        </FrameLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:orientation="vertical"></LinearLayout>
-
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>
