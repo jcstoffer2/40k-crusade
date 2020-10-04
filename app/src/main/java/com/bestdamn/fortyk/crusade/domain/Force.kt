@@ -2,7 +2,7 @@ package com.bestdamn.fortyk.crusade.domain
 
 import java.util.*
 
-class Force (
+data class Force(
     val id: String = UUID.randomUUID().toString(),
     var name: String? = "",
     var faction: String? = "",

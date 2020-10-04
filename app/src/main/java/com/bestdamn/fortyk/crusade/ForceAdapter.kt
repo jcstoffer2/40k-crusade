@@ -31,7 +31,6 @@ class ForceAdapter(private val myDataset: Array<Force>) :
         // create a new view
         val textView = LayoutInflater.from(parent.context)
             .inflate(R.layout.force_list_text_view, parent, false) as LinearLayout
-        // TODO: set the view's size, margins, paddings and layout parameters
         return MyViewHolder(textView)
     }
 

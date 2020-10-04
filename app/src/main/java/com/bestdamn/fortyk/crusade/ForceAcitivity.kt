@@ -40,7 +40,8 @@ class ForceAcitivity : AppCompatActivity() {
         }
         // setup recycler view
         viewManager = LinearLayoutManager(this)
-        viewAdapter = UnitAdapter(force.units.toTypedArray())
+        val adapterForces = force.units.sortedBy { it.name }.toTypedArray()
+        viewAdapter = UnitAdapter(adapterForces)
         recyclerView = findViewById<RecyclerView>(R.id.recyclerUnit).apply {
             // use this setting to improve performance if you know that changes
             // in content do not change the layout size of the RecyclerView

@@ -15,12 +15,11 @@ import com.google.gson.Gson
 import java.util.*
 
 /**
- * TODO: RECYCLER VIEW WRAP CONTENT INSTEAD OF STATIC SIZE.
  * TODO: BACK BUTTONS NOT FUNCTIONING AS EXPECTED, JUMPING BACK FROM SCREEN TO SCREEN.
+ * (SCROLL VIEW UNDER MAIN BANNER AT TOP W/ BUTTONS)
  * TODO: ALPHABETIZE LISTS
  * TODO: SAVE BUTTONS AUTO GO BACK?
  * TODO: SAVE AND BACK BUTTON PLACEMENT (PROBABLY TOP AND BOTTOM)
- * TODO: ADDITIONAL UI UPDATES (Icons)
  * TODO: AD BANNER ON BOTTOM OF SCREENS
  * TODO: ADDITIONAL UI UPDATES (Themes)
  */
@@ -34,16 +33,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-//        //        // TODO: remove this clearing on app boot.
-//        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE).edit().clear()
-//        prefs.apply()
-//
-//        bootstrap() // TODO: stop calling this
-
         setContentView(R.layout.activity_main)
         val existingForces = getExistingForces()
-        val adapterForces = existingForces.toTypedArray()
-
+        val adapterForces = existingForces.sortedBy { it.name }.toTypedArray()
         // setup recycler view
         viewManager = LinearLayoutManager(this)
         viewAdapter = ForceAdapter(adapterForces)
