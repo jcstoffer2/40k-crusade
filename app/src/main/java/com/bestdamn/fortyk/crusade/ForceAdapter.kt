@@ -13,7 +13,7 @@ import com.bestdamn.fortyk.crusade.domain.Force
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.force_list_text_view.view.*
 
-class ForceAdapter(private val myDataset: Array<Force>) :
+class ForceAdapter(private var myDataset: Array<Force>) :
     RecyclerView.Adapter<ForceAdapter.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -71,9 +71,11 @@ class ForceAdapter(private val myDataset: Array<Force>) :
 
                         editor.apply()
 
-                        // restart the main activity to pull new force list
-                        val intent = Intent(context, MainActivity::class.java)
-                        context.startActivity(intent)
+                        val list = myDataset.toMutableList()
+                        list.removeAt(position)
+                        myDataset = list.toTypedArray()
+                        notifyItemChanged(position)
+                        notifyItemRemoved(position)
 
                     })
                     setNegativeButton("No", null)

@@ -14,7 +14,7 @@ import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.unit_list_text_view.view.*
 
-class UnitAdapter(private val myDataset: Array<Unit>) :
+class UnitAdapter(private var myDataset: Array<Unit>) :
     RecyclerView.Adapter<UnitAdapter.MyViewHolder>() {
 
     // Provide a reference to the views for each data item
@@ -71,10 +71,11 @@ class UnitAdapter(private val myDataset: Array<Unit>) :
                         editor.putString(force.id, updatedForceJson)
                         editor.apply()
 
-                        // restart the force activity to pull new unit list
-                        val intent = Intent(context, ForceAcitivity::class.java)
-                        intent.putExtra("force", updatedForceJson)
-                        context.startActivity(intent)
+                        val list = myDataset.toMutableList()
+                        list.removeAt(position)
+                        myDataset = list.toTypedArray()
+                        notifyItemChanged(position)
+                        notifyItemRemoved(position)
                     })
                     setNegativeButton("No", null)
 
