@@ -1,7 +1,6 @@
 package com.bestdamn.fortyk.crusade
 
 import android.content.Intent
-import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,14 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
-import java.util.*
 
 /**
  * TODO: BACK BUTTONS NOT FUNCTIONING AS EXPECTED, JUMPING BACK FROM SCREEN TO SCREEN.
- * (SCROLL VIEW UNDER MAIN BANNER AT TOP W/ BUTTONS)
- * TODO: ALPHABETIZE LISTS
- * TODO: SAVE BUTTONS AUTO GO BACK?
- * TODO: SAVE AND BACK BUTTON PLACEMENT (PROBABLY TOP AND BOTTOM)
+ * TODO: SAVE AND BACK BUTTON PLACEMENT (FLOATING ON TOP ROW) (SAVE BUTTONS NO LONGER GO BACK)
  * TODO: AD BANNER ON BOTTOM OF SCREENS
  * TODO: ADDITIONAL UI UPDATES (Themes)
  */
@@ -80,7 +75,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        finish()
+        val home = Intent(Intent.ACTION_MAIN)
+        home.addCategory(Intent.CATEGORY_HOME)
+        home.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(home)
     }
 
     private fun bootstrap() {
