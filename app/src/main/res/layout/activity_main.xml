@@ -55,8 +55,8 @@
                 android:layout_gravity="end|bottom"
                 android:layout_margin="16sp"
                 android:onClick="addForce"
-                app:backgroundTint="@color/design_default_color_error"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:backgroundTint="@color/colorPrimaryDark"
+                app:srcCompat="@android:drawable/ic_menu_add" />
         </FrameLayout>
     </LinearLayout>
 
