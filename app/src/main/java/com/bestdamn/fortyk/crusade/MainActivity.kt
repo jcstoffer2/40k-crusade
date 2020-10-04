@@ -13,6 +13,8 @@ import com.google.gson.Gson
 /**
  * TODO: AD BANNER ON BOTTOM OF SCREENS
  * TODO: ADDITIONAL UI UPDATES (Themes)
+ * TODO: INFO SCREEN ON MAIN ACTIVITY
+ * TODO: SETTINGS SCREEN ON MAIN ACTIVITY
  */
 
 class MainActivity : AppCompatActivity() {
