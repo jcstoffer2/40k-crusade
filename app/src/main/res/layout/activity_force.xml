@@ -44,7 +44,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Save" />
+
         </LinearLayout>
+
+        <View
+            android:id="@+id/top_divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -58,12 +65,6 @@
                 android:orientation="vertical"
                 tools:context=".ForceAcitivity">
 
-
-                <View
-                    android:id="@+id/divider2"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="?android:attr/listDivider" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

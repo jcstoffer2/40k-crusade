@@ -11,7 +11,6 @@ import com.bestdamn.fortyk.crusade.domain.Unit
 import com.google.gson.Gson
 
 /**
- * TODO: SAVE AND BACK BUTTON PLACEMENT (FLOATING ON TOP ROW) (SAVE BUTTONS NO LONGER GO BACK)
  * TODO: AD BANNER ON BOTTOM OF SCREENS
  * TODO: ADDITIONAL UI UPDATES (Themes)
  */

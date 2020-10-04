@@ -30,7 +30,7 @@
             <TextView
                 android:id="@+id/txtCrusadeCard"
                 android:layout_width="0dp"
-                android:layout_height="40sp"
+                android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:gravity="center"
                 android:text="Unit Card"
@@ -45,6 +45,12 @@
                 android:text="Save" />
         </LinearLayout>
 
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider" />
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -56,12 +62,6 @@
                 android:orientation="vertical"
                 tools:context=".UnitActivity">
 
-
-                <View
-                    android:id="@+id/divider4"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="?android:attr/listDivider" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
