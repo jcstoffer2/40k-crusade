@@ -5,8 +5,6 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
     android:background="@drawable/rounded_corners"
-    android:layout_marginBottom="5sp"
-    android:layout_marginTop="5sp"
     >
 
     <TextView
