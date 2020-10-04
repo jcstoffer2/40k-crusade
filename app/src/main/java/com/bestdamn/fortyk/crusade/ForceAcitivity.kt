@@ -36,6 +36,10 @@ class ForceAcitivity : AppCompatActivity() {
         binding.btnAddUnit.setOnClickListener {
             addUnit(force)
         }
+
+        binding.btnBack.setOnClickListener {
+            this.onBackPressed()
+        }
         // setup recycler view
         viewManager = LinearLayoutManager(this)
         val adapterForces = force.units.sortedBy { it.name }.toTypedArray()
@@ -52,6 +56,7 @@ class ForceAcitivity : AppCompatActivity() {
             adapter = viewAdapter
 
         }
+
     }
 
     fun save(force: Force) {
