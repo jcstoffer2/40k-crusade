@@ -59,12 +59,12 @@ class ForceAcitivity : AppCompatActivity() {
 
     }
 
-    fun save(force: Force) {
+    private fun save(force: Force): Boolean {
 
         // name required to save
         if (force.name == null || force.name == "") {
-            Toast.makeText(applicationContext, "Enter a Force Name to Save.", LENGTH_LONG).show()
-            return
+            Toast.makeText(applicationContext, "Enter a Force Name.", LENGTH_LONG).show()
+            return false
         }
 
         val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
@@ -84,16 +84,19 @@ class ForceAcitivity : AppCompatActivity() {
 
         editor.apply()
 
-//        finish()
-
+        return true
     }
 
-    fun addUnit(force: Force) {
-        val unitIntent = Intent(this, UnitActivity::class.java)
-        val gson = Gson()
-        val newUnitJson = gson.toJson(Unit(force_id = force.id))
-        unitIntent.putExtra("unit", newUnitJson)
-        startActivity(unitIntent)
+    private fun addUnit(force: Force) {
+
+        val saved = save(force) // should handle name check / adding to empty force issue.
+        if (saved) {
+            val unitIntent = Intent(this, UnitActivity::class.java)
+            val gson = Gson()
+            val newUnitJson = gson.toJson(Unit(force_id = force.id))
+            unitIntent.putExtra("unit", newUnitJson)
+            startActivity(unitIntent)
+        }
     }
 
     override fun onBackPressed() {
