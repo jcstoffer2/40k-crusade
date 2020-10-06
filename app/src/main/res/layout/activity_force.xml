@@ -214,6 +214,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
                             android:selectAllOnFocus="true"
+                            android:inputType="number"
                             android:text="@={``+force.supplyLimit}" />
                     </LinearLayout>
 
@@ -235,6 +236,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center_horizontal"
                             android:selectAllOnFocus="true"
+                            android:inputType="number"
                             android:text="@={``+force.supplyUsed}" />
                     </LinearLayout>
                 </LinearLayout>
