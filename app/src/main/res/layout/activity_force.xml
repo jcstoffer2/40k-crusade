@@ -75,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Force Name"
-                        android:inputType="textCapSentences"
+                        android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.name}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Faction"
-                        android:inputType="textCapSentences"
+                        android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.faction}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -101,7 +101,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Player Name"
-                        android:inputType="textCapSentences"
+                        android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.playerName}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -114,7 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Goals and Victories"
-                    android:inputType="textCapSentences"
+                    android:inputType="textCapSentences|textMultiLine"
                     android:text="@={force.goalsInfoAndVictories}" />
                 </com.google.android.material.textfield.TextInputLayout>
 

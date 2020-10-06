@@ -75,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Unit Name"
                         android:text="@={unit.name}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Battlefield Role"
                         android:text="@={unit.role}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -103,7 +103,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Crusade Faction"
                         android:text="@={unit.faction}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -116,7 +116,7 @@
                         android:layout_height="46dp"
                         android:hint="Selectable Keywords"
                         android:text="@={unit.keywords}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +129,7 @@
                         android:layout_height="45dp"
                         android:hint="Unit Type"
                         android:text="@={unit.type}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -142,7 +142,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Equipment"
                         android:text="@={unit.equipment}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Psychic Powers"
                         android:text="@={unit.psychicPowers}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -168,7 +168,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Warlord Traits"
                         android:text="@={unit.warlordTraits}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -181,7 +181,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Relics"
                         android:text="@={unit.relics}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Upgrades And Abilities"
                         android:text="@={unit.upgradesAndAbilities}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -665,7 +665,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Battle Honors"
                         android:text="@={unit.battleHonors}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -678,7 +678,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Battle Scars"
                         android:text="@={unit.battleScars}"
-                        android:inputType="textCapSentences"/>
+                        android:inputType="textCapSentences|textMultiLine"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
 
