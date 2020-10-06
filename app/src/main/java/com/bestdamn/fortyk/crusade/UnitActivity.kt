@@ -13,10 +13,12 @@ import com.google.gson.Gson
 
 class UnitActivity : AppCompatActivity() {
 
+    private lateinit var unit: Unit
     override fun onResume() {
+
         super.onResume()
         val unitJson = intent.getStringExtra("unit")
-        val unit = Gson().fromJson(unitJson, Unit::class.java)
+        unit = Gson().fromJson(unitJson, Unit::class.java)
         val binding: ActivityUnitBinding = DataBindingUtil.setContentView(this, R.layout.activity_unit)
         binding.unit = unit
 
@@ -33,7 +35,7 @@ class UnitActivity : AppCompatActivity() {
         }
 
         binding.btnBack.setOnClickListener {
-            this.onBackPressed()
+            goBack(unit)
         }
     }
 
@@ -72,12 +74,19 @@ class UnitActivity : AppCompatActivity() {
         editor.putString(force.id, updatedForceJson)
         editor.apply()
 
-        // send force with new unit back to force activity
-        val forceIntent = Intent(this, ForceAcitivity::class.java)
-        val newForceJson = gson.toJson(force)
-        forceIntent.putExtra("force", newForceJson)
+    }
 
+    override fun onBackPressed() {
+        goBack(unit)
+    }
+
+    private fun goBack(unit: Unit) {
+        val prefs = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+        val forceJson = prefs.getString(unit.force_id, "")
+        val forceIntent = Intent(this, ForceAcitivity::class.java)
+        forceIntent.putExtra("force", forceJson)
         startActivity(forceIntent)
     }
+
 
 }
