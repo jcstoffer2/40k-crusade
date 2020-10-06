@@ -4,7 +4,9 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/rounded_corners"
+    android:outlineProvider="bounds"
+    android:elevation="2sp"
+    android:layout_marginBottom="2sp"
     >
 
     <TextView

@@ -4,8 +4,11 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/rounded_corners"
-    android:layout_marginBottom="5sp"
+    android:outlineProvider="bounds"
+    android:elevation="2sp"
+    android:layout_marginBottom="2sp"
+    android:padding="5sp"
+    android:clipToPadding="true"
     >
 
     <TextView
@@ -14,8 +17,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
         android:textSize="30sp"
-        android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp"
         />
 
     <TextView
@@ -25,8 +26,6 @@
         android:layout_weight="1"
         android:fontFamily="serif-monospace"
         android:textSize="18sp"
-        android:layout_marginBottom="5sp"
-        android:layout_marginTop="5sp"
         />
 
 </LinearLayout>
