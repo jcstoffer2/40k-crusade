@@ -228,7 +228,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.powerRating}" />
+                            android:text="@={``+unit.powerRating}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -251,7 +252,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.xp}" />
+                            android:text="@={``+unit.xp}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -274,7 +276,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.crusadePoints}" />
+                            android:text="@={``+unit.crusadePoints}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -335,7 +338,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.battlesPlayed}" />
+                            android:text="@={``+unit.battlesPlayed}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -358,7 +362,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.battlesSurvived}" />
+                            android:text="@={``+unit.battlesSurvived}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -458,7 +463,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyed}" />
+                            android:text="@={``+unit.unitsDestroyed}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedPsychicBattle"
@@ -468,7 +474,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedPsychic}" />
+                            android:text="@={``+unit.unitsDestroyedPsychic}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedRangedBattle"
@@ -478,7 +485,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedRanged}" />
+                            android:text="@={``+unit.unitsDestroyedRanged}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedMeleeBattle"
@@ -488,7 +496,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedMelee}" />
+                            android:text="@={``+unit.unitsDestroyedMelee}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtAgenda1Tally"
@@ -498,7 +507,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda1}" />
+                            android:text="@={``+unit.agenda1}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtAgenda2Tally"
@@ -508,7 +518,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda2}" />
+                            android:text="@={``+unit.agenda2}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtAgenda3Tally"
@@ -518,7 +529,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda3}" />
+                            android:text="@={``+unit.agenda3}"
+                            android:selectAllOnFocus="true"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -543,7 +555,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedTotal}" />
+                            android:text="@={``+unit.unitsDestroyedTotal}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedPsychicTotal"
@@ -553,7 +566,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedPsychicTotal}" />
+                            android:text="@={``+unit.unitsDestroyedPsychicTotal}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitDestroyedRangedTotal"
@@ -563,7 +577,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedRangedTotal}" />
+                            android:text="@={``+unit.unitsDestroyedRangedTotal}"
+                            android:selectAllOnFocus="true"/>
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedMeleeTotal"
@@ -573,7 +588,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedMeleeTotal}" />
+                            android:text="@={``+unit.unitsDestroyedMeleeTotal}"
+                            android:selectAllOnFocus="true"/>
 
                         <Space
                             android:layout_width="match_parent"
