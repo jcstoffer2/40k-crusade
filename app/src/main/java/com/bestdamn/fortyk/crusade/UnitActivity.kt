@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import com.bestdamn.fortyk.crusade.databinding.ActivityUnitBinding
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.gson.Gson
 
 class UnitActivity : AppCompatActivity() {
@@ -37,6 +39,11 @@ class UnitActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             goBack(unit)
         }
+
+        // ad view
+        val adView = findViewById<AdView>(R.id.unitAdView)
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 
     private fun saveUnit(unit: Unit) {

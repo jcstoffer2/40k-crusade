@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.databinding.ActivityForceBinding
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import com.google.gson.Gson
 
 class ForceAcitivity : AppCompatActivity() {
@@ -56,6 +58,11 @@ class ForceAcitivity : AppCompatActivity() {
             adapter = viewAdapter
 
         }
+
+        // ad view
+        val adView = findViewById<AdView>(R.id.forceAdView)
+        val adRequest: AdRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
 
     }
 

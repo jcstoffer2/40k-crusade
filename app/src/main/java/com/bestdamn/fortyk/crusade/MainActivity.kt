@@ -1,6 +1,8 @@
 package com.bestdamn.fortyk.crusade
 
 import android.content.Intent
+import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bestdamn.fortyk.crusade.domain.Force
 import com.bestdamn.fortyk.crusade.domain.Unit
+import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 
 /**
@@ -15,6 +18,7 @@ import com.google.gson.Gson
  * TODO: ADDITIONAL UI UPDATES (Themes)
  * TODO: INFO SCREEN ON MAIN ACTIVITY
  * TODO: SETTINGS SCREEN ON MAIN ACTIVITY
+ * ca-app-pub-3940256099942544/6300978111 == test ad view
  */
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         setContentView(R.layout.activity_main)
+
+        MobileAds.initialize(this)
+
         val existingForces = getExistingForces()
         val adapterForces = existingForces.sortedBy { it.name }.toTypedArray()
         // setup recycler view

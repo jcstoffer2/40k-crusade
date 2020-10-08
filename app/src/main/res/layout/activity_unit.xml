@@ -51,6 +51,15 @@
             android:layout_height="3dp"
             android:background="?android:attr/listDivider" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/unitAdView"
+            android:layout_width="wrap_content"
+            android:layout_height="60sp"
+            android:layout_gravity="center_horizontal"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+        <!--            app:adUnitId="ca-app-pub-4916380188509236/4845948675" -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,8 +83,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Unit Name"
-                        android:text="@={unit.name}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.name}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -89,8 +98,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Battlefield Role"
-                        android:text="@={unit.role}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.role}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -102,8 +111,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Crusade Faction"
-                        android:text="@={unit.faction}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.faction}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -115,8 +124,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:hint="Selectable Keywords"
-                        android:text="@={unit.keywords}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.keywords}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -128,8 +137,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
                         android:hint="Unit Type"
-                        android:text="@={unit.type}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.type}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -141,8 +150,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Equipment"
-                        android:text="@={unit.equipment}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.equipment}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -154,8 +163,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Psychic Powers"
-                        android:text="@={unit.psychicPowers}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.psychicPowers}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -167,8 +176,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Warlord Traits"
-                        android:text="@={unit.warlordTraits}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.warlordTraits}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -180,8 +189,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Relics"
-                        android:text="@={unit.relics}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.relics}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -198,8 +207,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Upgrades And Abilities"
-                        android:text="@={unit.upgradesAndAbilities}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.upgradesAndAbilities}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -228,8 +237,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.powerRating}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.powerRating}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -252,8 +261,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.xp}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.xp}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -276,8 +285,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.crusadePoints}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.crusadePoints}" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -338,8 +347,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.battlesPlayed}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.battlesPlayed}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -362,8 +371,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.battlesSurvived}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.battlesSurvived}" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -463,8 +472,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyed}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyed}" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedPsychicBattle"
@@ -474,8 +483,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedPsychic}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedPsychic}" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedRangedBattle"
@@ -485,8 +494,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedRanged}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedRanged}" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedMeleeBattle"
@@ -496,8 +505,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedMelee}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedMelee}" />
 
                         <EditText
                             android:id="@+id/txtAgenda1Tally"
@@ -507,8 +516,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda1}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.agenda1}" />
 
                         <EditText
                             android:id="@+id/txtAgenda2Tally"
@@ -518,8 +527,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda2}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.agenda2}" />
 
                         <EditText
                             android:id="@+id/txtAgenda3Tally"
@@ -529,8 +538,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.agenda3}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.agenda3}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -555,8 +564,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedTotal}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedTotal}" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedPsychicTotal"
@@ -566,8 +575,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedPsychicTotal}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedPsychicTotal}" />
 
                         <EditText
                             android:id="@+id/txtUnitDestroyedRangedTotal"
@@ -577,8 +586,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedRangedTotal}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedRangedTotal}" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedMeleeTotal"
@@ -588,8 +597,8 @@
                             android:ems="10"
                             android:gravity="center_horizontal"
                             android:inputType="number"
-                            android:text="@={``+unit.unitsDestroyedMeleeTotal}"
-                            android:selectAllOnFocus="true"/>
+                            android:selectAllOnFocus="true"
+                            android:text="@={``+unit.unitsDestroyedMeleeTotal}" />
 
                         <Space
                             android:layout_width="match_parent"
@@ -664,8 +673,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Battle Honors"
-                        android:text="@={unit.battleHonors}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.battleHonors}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -677,13 +686,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Battle Scars"
-                        android:text="@={unit.battleScars}"
-                        android:inputType="textCapSentences|textMultiLine"/>
+                        android:inputType="textCapSentences|textMultiLine"
+                        android:text="@={unit.battleScars}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
             </android.widget.LinearLayout>
         </ScrollView>
+
     </LinearLayout>
+
 
 </layout>
