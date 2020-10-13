@@ -17,6 +17,7 @@ import com.google.gson.Gson
 
 /**
  * TODO: ADDITIONAL UI UPDATES (Themes)
+ * TODO: ADDITIONAL UI UPDATES (Main Screen scrolling / views)
  * TODO: EXTERNALIZE ALL THE UI STRINGS
  * ca-app-pub-3940256099942544/6300978111 == test ad view
  */
