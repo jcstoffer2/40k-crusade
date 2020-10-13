@@ -16,8 +16,6 @@ import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 
 /**
- * TODO: INFO SCREEN ON MAIN ACTIVITY
- * TODO: SETTINGS SCREEN ON MAIN ACTIVITY
  * TODO: ADDITIONAL UI UPDATES (Themes)
  * TODO: EXTERNALIZE ALL THE UI STRINGS
  * ca-app-pub-3940256099942544/6300978111 == test ad view
@@ -29,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var infoButton: ImageButton
+    private lateinit var themeButton: ImageButton
 
     override fun onResume() {
         super.onResume()
@@ -56,10 +55,18 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        // info button
         infoButton = findViewById(R.id.btnInfo)
         infoButton.setOnClickListener {
             showInfo()
         }
+
+        // theme button
+        themeButton = findViewById(R.id.btnTheme)
+        themeButton.setOnClickListener {
+            pickTheme()
+        }
+
 
     }
 
@@ -101,6 +108,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(home)
     }
 
+    /**
+     * Show the application info screen.
+     */
     private fun showInfo() {
         val builder: AlertDialog.Builder? = this.let {
             AlertDialog.Builder(it)
@@ -108,7 +118,6 @@ class MainActivity : AppCompatActivity() {
         val dialogTitleView = TextView(this)
         dialogTitleView.text = "Crusade Tracker"
         dialogTitleView.textSize = 20F
-        dialogTitleView.text
         dialogTitleView.gravity = Gravity.CENTER_HORIZONTAL
         val dialogTextView = TextView(this)
         dialogTextView.gravity = Gravity.CENTER_HORIZONTAL
@@ -123,6 +132,19 @@ class MainActivity : AppCompatActivity() {
         builder?.setView(dialogTextView)
         val infoDialog: AlertDialog? = builder?.create()
         infoDialog?.show()
+    }
+
+    private fun pickTheme() {
+        val builder: AlertDialog.Builder? = this.let {
+            AlertDialog.Builder(it)
+        }
+        val dialogTitleView = TextView(this)
+        dialogTitleView.text = "Coming Soon!"
+        dialogTitleView.textSize = 20F
+        dialogTitleView.gravity = Gravity.CENTER_HORIZONTAL
+        builder?.setCustomTitle(dialogTitleView)
+        val themeDialog: AlertDialog? = builder?.create()
+        themeDialog?.show()
     }
 
     private fun bootstrap() {
