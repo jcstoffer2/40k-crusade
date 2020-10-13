@@ -1,10 +1,12 @@
 package com.bestdamn.fortyk.crusade
 
+import android.app.AlertDialog
 import android.content.Intent
-import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,12 +28,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var infoButton: ImageButton
 
     override fun onResume() {
         super.onResume()
 
         setContentView(R.layout.activity_main)
 
+        // init ads
         MobileAds.initialize(this)
 
         val existingForces = getExistingForces()
@@ -51,6 +55,12 @@ class MainActivity : AppCompatActivity() {
             adapter = viewAdapter
 
         }
+
+        infoButton = findViewById(R.id.btnInfo)
+        infoButton.setOnClickListener {
+            showInfo()
+        }
+
     }
 
     /**
@@ -69,6 +79,9 @@ class MainActivity : AppCompatActivity() {
         return existingForces
     }
 
+    /**
+     * Start the force activity to add a new force.
+     */
     fun addForce(view: View) {
         val forceIntent = Intent(this, ForceAcitivity::class.java)
         val gson = Gson()
@@ -78,11 +91,38 @@ class MainActivity : AppCompatActivity() {
         startActivity(forceIntent)
     }
 
+    /**
+     * Override the onBackPressed method to go back to the home screen.
+     */
     override fun onBackPressed() {
         val home = Intent(Intent.ACTION_MAIN)
         home.addCategory(Intent.CATEGORY_HOME)
         home.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(home)
+    }
+
+    private fun showInfo() {
+        val builder: AlertDialog.Builder? = this.let {
+            AlertDialog.Builder(it)
+        }
+        val dialogTitleView = TextView(this)
+        dialogTitleView.text = "Crusade Tracker"
+        dialogTitleView.textSize = 20F
+        dialogTitleView.text
+        dialogTitleView.gravity = Gravity.CENTER_HORIZONTAL
+        val dialogTextView = TextView(this)
+        dialogTextView.gravity = Gravity.CENTER_HORIZONTAL
+        var dialogMessage = "This is application was designed to track your Crusade Forces throughout their Crusade Campaigns.\n\n\n"
+        dialogMessage += "- Click the circular Add button on the Crusade Forces screen to add a new force.\n\n"
+        dialogMessage += "- Fill in the info for your Crusade Force and click the Add Unit button to add Units to the Force.\n\n"
+        dialogMessage += "- Click the info button to show this informational screen.\n\n"
+        dialogMessage += "- Click the palette button to show the theme selection screen.\n\n"
+        dialogMessage += "This application is completely unofficial and is in no way associated with or endorsed by Games Workshop Limited. \n"
+        dialogTextView.text = dialogMessage
+        builder?.setCustomTitle(dialogTitleView)
+        builder?.setView(dialogTextView)
+        val infoDialog: AlertDialog? = builder?.create()
+        infoDialog?.show()
     }
 
     private fun bootstrap() {
