@@ -1,61 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal">
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="41dp"
+            android:layout_weight="6"
+            android:fontFamily="serif-monospace"
+            android:gravity="center"
+            android:text="Crusade Forces"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="30sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="0dp"
-                android:layout_height="41dp"
-                android:layout_weight="6"
-                android:fontFamily="serif-monospace"
-                android:gravity="center"
-                android:text="Crusade Forces"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+    </LinearLayout>
 
-        </LinearLayout>
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="?android:attr/listDivider" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16sp" />
+    <android.widget.LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/forceRecycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_gravity="center_horizontal"
+            android:layout_weight="100"
             android:clipToPadding="true"
             android:foregroundGravity="center_horizontal"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:verticalScrollbarPosition="right"
             tools:layout_editor_absoluteX="171dp"
             tools:layout_editor_absoluteY="69dp" />
 
         <FrameLayout
+            android:id="@+id/frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/addForceButton"
@@ -67,35 +75,29 @@
                 app:backgroundTint="@color/colorPrimaryDark"
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:layout_gravity="bottom"
-                android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/btnTheme"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_weight="1"
-                    android:background="@drawable/palette_icon" />
-
-                <ImageButton
-                    android:id="@+id/btnInfo"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/ic_menu_info_details" />
-
-                <Space
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6" />
-            </LinearLayout>
         </FrameLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-</androidx.core.widget.NestedScrollView>
+            <ImageButton
+                android:id="@+id/btnTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@drawable/palette_icon" />
+
+            <ImageButton
+                android:id="@+id/btnInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@android:drawable/ic_menu_info_details" />
+
+        </LinearLayout>
+    </android.widget.LinearLayout>
+
+
+</LinearLayout>
