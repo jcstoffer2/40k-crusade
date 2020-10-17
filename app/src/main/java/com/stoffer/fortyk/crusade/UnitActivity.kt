@@ -1,4 +1,4 @@
-package com.bestdamn.fortyk.crusade
+package com.stoffer.fortyk.crusade
 
 import android.content.Intent
 import android.widget.RadioButton
@@ -6,9 +6,9 @@ import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.bestdamn.fortyk.crusade.databinding.ActivityUnitBinding
-import com.bestdamn.fortyk.crusade.domain.Force
-import com.bestdamn.fortyk.crusade.domain.Unit
+import com.stoffer.fortyk.crusade.databinding.ActivityUnitBinding
+import com.stoffer.fortyk.crusade.domain.Force
+import com.stoffer.fortyk.crusade.domain.Unit
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.gson.Gson

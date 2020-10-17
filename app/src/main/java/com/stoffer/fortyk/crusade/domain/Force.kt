@@ -1,4 +1,4 @@
-package com.bestdamn.fortyk.crusade.domain
+package com.stoffer.fortyk.crusade.domain
 
 import java.util.*
 

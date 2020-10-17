@@ -1,4 +1,4 @@
-package com.bestdamn.fortyk.crusade
+package com.stoffer.fortyk.crusade
 
 import org.junit.Test
 

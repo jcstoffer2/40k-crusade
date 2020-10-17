@@ -1,4 +1,4 @@
-package com.bestdamn.fortyk.crusade
+package com.stoffer.fortyk.crusade
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bestdamn.fortyk.crusade.domain.Force
-import com.bestdamn.fortyk.crusade.domain.Unit
+import com.stoffer.fortyk.crusade.domain.Force
+import com.stoffer.fortyk.crusade.domain.Unit
 import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 
