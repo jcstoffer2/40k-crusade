@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:onClick="back"
-                android:text="Back" />
+                android:text="@string/back" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -34,7 +34,7 @@
                 android:layout_height="48dp"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:text="Force"
+                android:text="@string/force"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -43,7 +43,7 @@
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Save" />
+                android:text="@string/save" />
 
         </LinearLayout>
 
@@ -83,7 +83,7 @@
                         android:id="@+id/txtName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Force Name"
+                        android:hint="@string/force_name"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.name}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +96,7 @@
                         android:id="@+id/txtFaction"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Faction"
+                        android:hint="@string/faction"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.faction}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -109,7 +109,7 @@
                         android:id="@+id/txtPlayerName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Player Name"
+                        android:hint="@string/player_name"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={force.playerName}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +122,7 @@
                     android:id="@+id/txtGoalsAndVictories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Goals and Victories"
+                    android:hint="@string/goals_and_victories"
                     android:inputType="textCapSentences|textMultiLine"
                     android:text="@={force.goalsInfoAndVictories}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -142,7 +142,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Battle Tally" />
+                            android:text="@string/battle_tally" />
 
                         <EditText
                             android:id="@+id/tally"
@@ -164,7 +164,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Battles Won" />
+                            android:text="@string/battles_won" />
 
                         <EditText
                             android:id="@+id/battlesWon"
@@ -186,7 +186,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Req Pts" />
+                            android:text="@string/req_pts" />
 
                         <EditText
                             android:id="@+id/requisitionPoints"
@@ -215,7 +215,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Supply Limit" />
+                            android:text="@string/supply_limit" />
 
                         <EditText
                             android:id="@+id/supplyLimit"
@@ -237,7 +237,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Supply Used" />
+                            android:text="@string/supply_used" />
 
                         <EditText
                             android:id="@+id/supplyUsed"
@@ -255,7 +255,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="34dp"
                     android:gravity="center"
-                    android:text="Units"
+                    android:text="@string/units"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -269,7 +269,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="add"
-                    android:text="Add Unit" />
+                    android:text="@string/add_unit" />
 
 
             </android.widget.LinearLayout>

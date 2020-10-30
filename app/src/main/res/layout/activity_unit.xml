@@ -25,7 +25,7 @@
                 android:layout_width="0sp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Back" />
+                android:text="@string/back" />
 
             <TextView
                 android:id="@+id/txtCrusadeCard"
@@ -33,7 +33,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:text="Unit Card"
+                android:text="@string/unit_card"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -42,7 +42,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Save" />
+                android:text="@string/save" />
         </LinearLayout>
 
         <View
@@ -82,7 +82,7 @@
                         android:id="@+id/txtUnit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Unit Name"
+                        android:hint="@string/unit_name"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.name}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +97,7 @@
                         android:id="@+id/txtRole"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Battlefield Role"
+                        android:hint="@string/battlefield_role"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.role}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -110,7 +110,7 @@
                         android:id="@+id/txtCrusadeFaction"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Crusade Faction"
+                        android:hint="@string/crusade_faction"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.faction}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -123,7 +123,7 @@
                         android:id="@+id/txtKeywords"
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
-                        android:hint="Selectable Keywords"
+                        android:hint="@string/selectable_keywords"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.keywords}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -136,7 +136,7 @@
                         android:id="@+id/txtUnitType"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:hint="Unit Type"
+                        android:hint="@string/unit_type"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.type}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -149,7 +149,7 @@
                         android:id="@+id/txtEquipment"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Equipment"
+                        android:hint="@string/equipment"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.equipment}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +162,7 @@
                         android:id="@+id/txtPsychicPowers"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Psychic Powers"
+                        android:hint="@string/psychic_powers"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.psychicPowers}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -175,7 +175,7 @@
                         android:id="@+id/txtWarlordTraits"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Warlord Traits"
+                        android:hint="@string/warlord_traits"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.warlordTraits}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -188,7 +188,7 @@
                         android:id="@+id/txtRelics"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Relics"
+                        android:hint="@string/relics"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.relics}" />
 
@@ -206,7 +206,7 @@
                         android:id="@+id/txtUpgrades"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Upgrades And Abilities"
+                        android:hint="@string/upgrades_and_abilities"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.upgradesAndAbilities}" />
 
@@ -228,7 +228,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Power Rating" />
+                            android:text="@string/power_rating" />
 
                         <EditText
                             android:id="@+id/txtPowerRating"
@@ -252,7 +252,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Experience" />
+                            android:text="@string/experience" />
 
                         <EditText
                             android:id="@+id/txtExperience"
@@ -276,7 +276,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Crusade Points" />
+                            android:text="@string/crusade_points" />
 
                         <EditText
                             android:id="@+id/txtCrusadePoints"
@@ -295,7 +295,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:gravity="center"
-                    android:text="Combat Tallies"
+                    android:text="@string/combat_tallies"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -310,7 +310,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:paddingBottom="12sp"
-                    android:text="Blank on new units. Fill out as you play games." />
+                    android:text="@string/blank_on_new_units_fill_out_as_you_play_games" />
 
                 <View
                     android:id="@+id/divider6"
@@ -338,7 +338,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Battles Played" />
+                            android:text="@string/battles_played" />
 
                         <EditText
                             android:id="@+id/txtBattlesPlayed"
@@ -362,7 +362,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="Battles Survived" />
+                            android:text="@string/battles_survived" />
 
                         <EditText
                             android:id="@+id/txtBattlesSurvived"
@@ -399,7 +399,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Units Destroyed" />
+                            android:text="@string/units_destroyed" />
 
                         <TextView
                             android:id="@+id/textView15"
@@ -407,7 +407,7 @@
                             android:layout_height="6dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Destroyed with Psychic" />
+                            android:text="@string/destroyed_with_psychic" />
 
                         <TextView
                             android:id="@+id/textView16"
@@ -415,7 +415,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Destroyed with Ranged" />
+                            android:text="@string/destroyed_with_ranged" />
 
                         <TextView
                             android:id="@+id/textView17"
@@ -423,7 +423,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Destroyed with Melee" />
+                            android:text="@string/destroyed_with_melee" />
 
                         <TextView
                             android:id="@+id/textView18"
@@ -431,7 +431,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Agenda 1 Tally" />
+                            android:text="@string/agenda_1_tally" />
 
                         <TextView
                             android:id="@+id/textView19"
@@ -439,7 +439,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Agenda 2 Tally" />
+                            android:text="@string/agenda_2_tally" />
 
                         <TextView
                             android:id="@+id/textView20"
@@ -447,7 +447,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
-                            android:text="Agenda 3 Tally" />
+                            android:text="@string/agenda_3_tally" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -462,7 +462,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="This Battle" />
+                            android:text="@string/this_battle" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedBattle"
@@ -554,7 +554,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="In Total" />
+                            android:text="@string/in_total" />
 
                         <EditText
                             android:id="@+id/txtUnitsDestroyedTotal"
@@ -623,7 +623,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="43dp"
                     android:gravity="center|center_vertical"
-                    android:text="Rank"
+                    android:text="@string/rank"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -638,7 +638,7 @@
                         android:id="@+id/rdBtnBlooded"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Blooded"
+                        android:text="@string/blooded"
                         android:textSize="12sp" />
 
                     <RadioButton
@@ -646,21 +646,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center|start"
-                        android:text="Hardened"
+                        android:text="@string/hardened"
                         android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rdBtnHeroic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Heroic"
+                        android:text="@string/heroic"
                         android:textSize="12sp" />
 
                     <RadioButton
                         android:id="@+id/rdBtnLegendary"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Legendary"
+                        android:text="@string/legendary"
                         android:textSize="12sp" />
                 </RadioGroup>
 
@@ -672,7 +672,7 @@
                         android:id="@+id/txtBattleHonors"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Battle Honors"
+                        android:hint="@string/battle_honors"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.battleHonors}" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -685,7 +685,7 @@
                         android:id="@+id/txtBattleScars"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Battle Scars"
+                        android:hint="@string/battle_scars"
                         android:inputType="textCapSentences|textMultiLine"
                         android:text="@={unit.battleScars}" />
                 </com.google.android.material.textfield.TextInputLayout>
