@@ -16,9 +16,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.gson.Gson
 
 /**
- * TODO: ADDITIONAL UI UPDATES (Themes)
- * TODO: ADDITIONAL UI UPDATES (Main Screen scrolling / views)
- * TODO: EXTERNALIZE ALL THE UI STRINGS
+ * TODO: ADDITIONAL UI UPDATES (Accent colors)
  * ca-app-pub-3940256099942544/6300978111 == test ad view
  */
 
@@ -126,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         dialogMessage += "- Click the circular Add button on the Crusade Forces screen to add a new force.\n\n"
         dialogMessage += "- Fill in the info for your Crusade Force and click the Add Unit button to add Units to the Force.\n\n"
         dialogMessage += "- Click the info button to show this informational screen.\n\n"
-        dialogMessage += "- Click the palette button to show the theme selection screen.\n\n"
+        dialogMessage += "- Click the palette button to show the accent color selection screen.\n\n"
         dialogMessage += "This application is completely unofficial and is in no way associated with or endorsed by Games Workshop Limited. \n"
         dialogTextView.text = dialogMessage
         builder?.setCustomTitle(dialogTitleView)
