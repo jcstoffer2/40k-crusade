@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         dialogMessage += "- Click the circular Add button on the Crusade Forces screen to add a new force.\n\n"
         dialogMessage += "- Fill in the info for your Crusade Force and click the Add Unit button to add Units to the Force.\n\n"
         dialogMessage += "- Click the info button to show this informational screen.\n\n"
-        dialogMessage += "- Click the palette button to show the accent color selection screen.\n\n"
+//        dialogMessage += "- Click the palette button to show the accent color selection screen.\n\n"
         dialogMessage += "This application is completely unofficial and is in no way associated with or endorsed by Games Workshop Limited. \n"
         dialogTextView.text = dialogMessage
         builder?.setCustomTitle(dialogTitleView)
@@ -133,6 +133,7 @@ class MainActivity : AppCompatActivity() {
         infoDialog?.show()
     }
 
+    // TODO: theme
     private fun pickTheme() {
         val builder: AlertDialog.Builder? = this.let {
             AlertDialog.Builder(it)
