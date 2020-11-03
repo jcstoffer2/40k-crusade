@@ -59,7 +59,8 @@
             android:layout_height="60sp"
             android:layout_gravity="center_horizontal"
             app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+            app:adUnitId="ca-app-pub-4916380188509236/4845948675"/>
+<!--           TEST= app:adUnitId="ca-app-pub-3940256099942544/6300978111" />-->
         <!--            app:adUnitId="ca-app-pub-4916380188509236/4845948675" -->
 
         <androidx.core.widget.NestedScrollView
